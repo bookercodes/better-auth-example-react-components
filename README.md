@@ -1,7 +1,14 @@
 # Better Auth UI
 
 ## Components
-- SignUpForm
+
+| Component  |  |
+| ------------- | ------------- |
+| `SignUpForm`  | IMG  |
+| `SignInForm`  | IMG  |
+| `RequestPasswordResetForm`  | IMG  |
+| `ResetPasswordForm`  | IMG  |
+| `UpdateAvatarCard`  | IMG  |
 
 ## Dependencies
 - `zod`
