@@ -1,10 +1,10 @@
 # Better Auth UI
 
-Non-comprehensive collection of authentication React components to help you get up and running with Better Auth quickly.
+A non-comprehensive set of authentication components to help you get started quickly with Better Auth.
 
-They’re designed to be copied and pasted into your project to help you get  off the ground. The code is meant to be adapted — you’ll likely want to modify the components to fit your specific requirements. 
+Designed for copy-paste use, these components serve as a starting point and are meant to be customized to suit your specific needs.
 
-Built with react-hook-form, zod, and ShadCN UI, each component accepts handler functions so you can connect it to Better Auth.
+The components are not connected to Better Auth out of the box. Instead, they expose handler functions (e.g. `SignUpForm.onSubmit`) so you can wire them up with Better Auth however you like.
 
 ## Components
 
