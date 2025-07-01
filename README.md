@@ -1,4 +1,4 @@
-# Better Auth UI
+# Better Auth React Components
 
 A non-comprehensive set of authentication components to help you get started quickly with Better Auth.
 
