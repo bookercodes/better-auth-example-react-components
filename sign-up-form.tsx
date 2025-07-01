@@ -1,4 +1,68 @@
-  }: SignUpFormProps) {
+"use client";
+
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2, Github } from "lucide-react";
+import { useForm } from "react-hook-form";
+import z from "zod";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+
+const formSchema = z
+  .object({
+    firstName: z.string().min(1, { message: "First name is required." }),
+    lastName: z.string().min(1, { message: "Last name is required." }),
+    email: z.string().email({
+      message: "Please enter a valid email address.",
+    }),
+    password: z
+      .string()
+      .min(6, {
+        message: "Password must be at least 6 characters.",
+      })
+      .regex(/[a-zA-Z]/, { message: "Contain at least one letter." })
+      .regex(/[0-9]/, { message: "Contain at least one number." })
+      .regex(/[^a-zA-Z0-9]/, {
+        message: "Contain at least one special character.",
+      }),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match.",
+    path: ["confirmPassword"],
+  });
+
+export type SignUpFormValues = z.infer<typeof formSchema>;
+
+export type SignUpFormProps = {
+  onSubmit: (values: SignUpFormValues) => void;
+  onGitHubSignIn: () => void;
+  isPending?: boolean;
+  errorMessage?: string | null;
+  redirectUrl?: string | null;
+};
+
+export function SignUpForm({
+  onSubmit,
+  onGitHubSignIn,
+  isPending,
+  redirectUrl,
+}: SignUpFormProps) {
   const form = useForm<SignUpFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
