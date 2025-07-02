@@ -51,7 +51,7 @@ export type SignUpFormValues = z.infer<typeof formSchema>;
 
 export type SignUpFormProps = {
   onSubmit: (values: SignUpFormValues) => void;
-  onGitHubSignIn: () => void;
+  onGitHubSignIn?: () => void;
   isPending?: boolean;
   errorMessage?: string | null;
   redirectUrl?: string | null;
@@ -160,23 +160,27 @@ export function SignUpForm({
               </Button>
             </form>
           </Form>
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t" />
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-card px-2 text-muted-foreground">or</span>
-            </div>
-          </div>
-          <Button
-            variant="outline"
-            className="w-full"
-            onClick={onGitHubSignIn}
-            disabled={isPending}
-          >
-            <Github className="mr-2 h-4 w-4" />
-            Continue with GitHub
-          </Button>
+          {onGitHubSignIn && (
+            <>
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-card px-2 text-muted-foreground">or</span>
+                </div>
+              </div>
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={onGitHubSignIn}
+                disabled={isPending}
+              >
+                <Github className="mr-2 h-4 w-4" />
+                Continue with GitHub
+              </Button>
+            </>
+          )}
         </CardContent>
         <CardFooter className="flex justify-center">
           <span className="text-sm text-muted-foreground">
