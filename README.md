@@ -20,4 +20,4 @@ The components are not connected to Better Auth out of the box. Instead, they ex
 - `zod`
 - `@hookform/resolvers`
 -  `react-hook-form`
--  `npx shadcn add form alert button card input` 
+-  `npx shadcn add form alert button card input avatar dropdown-menu` 
