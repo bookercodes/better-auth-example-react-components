@@ -81,7 +81,7 @@ export function SignUpForm({
           <CardTitle>Sign up</CardTitle>
           <CardDescription>Create a new account to get started</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <div className="flex gap-4">
@@ -94,9 +94,7 @@ export function SignUpForm({
                       <FormControl>
                         <Input type="text" {...field} disabled={isPending} />
                       </FormControl>
-                      <div className="min-h-[20px]">
-                        <FormMessage />
-                      </div>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -109,9 +107,7 @@ export function SignUpForm({
                       <FormControl>
                         <Input type="text" {...field} disabled={isPending} />
                       </FormControl>
-                      <div className="min-h-[20px]">
-                        <FormMessage />
-                      </div>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -125,7 +121,7 @@ export function SignUpForm({
                     <FormControl>
                       <Input type="email" {...field} disabled={isPending} />
                     </FormControl>
-                    <FormMessage className="min-h-[20px]" />
+                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -138,7 +134,7 @@ export function SignUpForm({
                     <FormControl>
                       <Input type="password" {...field} disabled={isPending} />
                     </FormControl>
-                    <FormMessage className="min-h-[20px]" />
+                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -151,11 +147,15 @@ export function SignUpForm({
                     <FormControl>
                       <Input type="password" {...field} disabled={isPending} />
                     </FormControl>
-                    <FormMessage className="min-h-[20px]" />
+                    <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full" disabled={isPending}>
+              <Button
+                type="submit"
+                className={`w-full ${!onGitHubSignIn ? "mt-6" : ""}`}
+                disabled={isPending}
+              >
                 {isPending ? <Loader2 className="animate-spin" /> : "Continue"}
               </Button>
             </form>
