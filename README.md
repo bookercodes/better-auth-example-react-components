@@ -12,9 +12,8 @@ The components are not connected to Better Auth out of the box. Instead, they ex
 | ------------- | ------------- |
 | `SignUpForm`  | IMG  |
 | `SignInForm`  | IMG  |
-| `RequestPasswordResetForm`  | IMG  |
-| `ResetPasswordForm`  | IMG  |
-| `UpdateAvatarCard`  | IMG  |
+| `UserDropdown`  | IMG  |
+| `AuthButtons`  | IMG  |
 
 ## Dependencies
 - `zod`
