@@ -17,7 +17,7 @@ The components are not connected to Better Auth out of the box. Instead, they ex
 
 ## Installation
 
-``
+```
 npm i zod react-hook-form @hookform/resolvers
 npx shadcn add form button card input avatar dropdown-menu
 ```
