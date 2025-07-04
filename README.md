@@ -8,15 +8,18 @@ The components are not connected to Better Auth out of the box. Instead, they ex
 
 ## Components
 
-| Component  |  |
-| ------------- | ------------- |
-| `SignUpForm`  | IMG  |
-| `SignInForm`  | IMG  |
-| `UserDropdown`  | IMG  |
-| `AuthButtons`  | IMG  |
+| Component  |  
+| ------------- |
+| `SignUpForm`  | 
+| `SignInForm`  | 
+| `UserDropdown`  | 
+| `AuthButtons`  | 
 
-## Dependencies
-- `zod`
-- `@hookform/resolvers`
--  `react-hook-form`
--  `npx shadcn add form alert button card input avatar dropdown-menu` 
+## Installation
+
+``
+npm i zod react-hook-form @hookform/resolvers
+npx shadcn add form button card input avatar dropdown-menu
+```
+
+Happy coding!
